@@ -14,3 +14,7 @@ area = math.pi * radio**2
 
 # Mostrar resultado
 st.write(f"El área del círculo con radio {radio} es:{area:2f}")
+
+# Selección de figura
+figura = st.selectbox("Selecciona una figura geométrica",["Triángulo"])
+
