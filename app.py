@@ -61,7 +61,71 @@ elif figura == "Cuadrado":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
-# Imagen de las figuras
+# Selector de color
+color = st.color_picker("Selecciona el color del borde", "#00f900")
+
+# Crear figura de matplotlib
+fig, ax = plt.subplots()
+
+if figura == "Círculo":
+    circle = plt.Circle((0, 0), radio, color=color, fill=False)
+    ax.add_artist(circle)
+    ax.set_xlim(-radio - 1, radio + 1)
+    ax.set_ylim(-radio - 1, radio + 1)
+
+elif figura == "Cuadrado":
+    square = plt.Rectangle((-lado/2, -lado/2), lado, lado, edgecolor=color, fill=False)
+    ax.add_artist(square)
+    ax.set_xlim(-lado, lado)
+    ax.set_ylim(-lado, lado)
+
+elif figura == "Rectángulo":
+    rect = plt.Rectangle((-base/2, -altura/2), base, altura, edgecolor=color, fill=False)
+    ax.add_artist(rect)
+    ax.set_xlim(-base, base)
+    ax.set_ylim(-altura, altura)
+
+elif figura == "Triángulo":
+    x = [-base/2, base/2, 0]
+    y = [0, 0, altura]
+    triangle = plt.Polygon(list(zip(x, y)), edgecolor=color, fill=False)
+    ax.add_artist(triangle)
+    ax.set_xlim(-base, base)
+    ax.set_ylim(0, altura + 2)
+
+# Configuración final del gráfico
+ax.set_aspect('equal')
+ax.axis('off')
+st.pyplot(fig)
+
+# Selección de función
+funcion = st.selectbox("Selecciona una función", ["sin(x)", "cos(x)", "tan(x)"])
+
+# Parámetros
+rango_max = st.slider("Rango máximo (x)", np.pi, 4 * np.pi, 2 * np.pi)
+amplitud = st.slider("Amplitud", 0.1, 2.0, 1.0)
+
+# Generar valores
+x = np.linspace(0, rango_max, 300)
+
+# Graficar función seleccionada
+st.write(f"Función seleccionada: {funcion}")
+
+if funcion == "sin(x)":
+    y = amplitud * np.sin(x)
+elif funcion == "cos(x)":
+    y = amplitud * np.cos(x)
+elif funcion == "tan(x)":
+    y = amplitud * np.tan(x)
+    y = np.clip(y, -10, 10)  # limitar valores extremos para tan(x)
+
+# Mostrar gráfico
+fig, ax = plt.subplots()
+ax.plot(x, y, label=funcion)
+ax.set_title(f"Gráfica de {funcion}")
+ax.grid(True)
+ax.legend()
+st.pyplot(fig)
 
 
 
