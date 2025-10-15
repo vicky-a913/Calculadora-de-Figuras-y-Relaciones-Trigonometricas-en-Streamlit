@@ -24,7 +24,7 @@ figura = st.selectbox("Selecciona una figura geométrica",["Triángulo"])
 # Widget para ingresar el area
 area = st.slider("Seleccionar el area", 0.0, 10.0, 5.0)
 
-if figura == "Triangulo"
+if figura == "Triangulo":
     base = st.slider("Selecciona la base", 0.0, 10.0, 5.0)
     altura = st.slider("Selecciona la altura", 0.0, 10.0, 5.0)
     lado_a = st.slider("Lado a", 0.0, 10.0, 5.0)
