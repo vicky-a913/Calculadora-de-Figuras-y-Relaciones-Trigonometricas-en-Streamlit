@@ -3,6 +3,9 @@ import math
 
 st.title("Mi Aplicación para Calcular Figuras y Relaciones Trigonométricas en Streamlit 🖩")
 
+# Selección de figura
+figura = st.selectbox("Selecciona una figura geométrica",["Círculo"])
+
 # Widget para ingresar el radio
 radio = st.slider("Selecciona el radio", 0.0, 10.0, 5.0)
 
