@@ -17,6 +17,7 @@ perimetro = 2 * math.pi * radio
 
 # Mostrar resultado
 st.write(f"El área del círculo con radio {radio} es:{area:2f}")
+st.metric("Perímetro", f"{perimetro:.2f}")
 
 # Selección de figura
 figura = st.selectbox("Selecciona una figura geométrica",["Triángulo"])
