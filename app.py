@@ -1,5 +1,6 @@
 import streamlit as st 
 import math
+import matplotlib
 
 st.title("Mi Aplicación para Calcular Figuras y Relaciones Trigonométricas en Streamlit 🖩")
 
@@ -17,6 +18,12 @@ if figura == "Círculo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
+# Imagen de la figura
+    fig, ax = plt.subplots()
+    circle = plt.Circle((0, 0), radio, color=color, fill=False)
+    ax.add_artist(circle)
+    ax.set_aspect('equal')
+    st.pyplot(fig)
 
 # Triángulo
 elif figura == "Triángulo":
