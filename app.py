@@ -3,6 +3,7 @@ import math
 import matplotlib
 
 st.title("Mi Aplicación para Calcular Figuras y Relaciones Trigonométricas en Streamlit 🖩")
+st.sidebar.write("Nombre:Karina Victoria Izquierdo Navarro, Matricula: 385983, Grupo:3L")
 
 # Selección de figura
 figura = st.selectbox("Selecciona una figura geometrica", ["Círculo", "Triángulo", "Rectángulo", "Cuadrado"])
