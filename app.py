@@ -18,12 +18,6 @@ if figura == "Círculo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
-# Imagen de la figura
-    fig, ax = plt.subplots()
-    circle = plt.Circle((0, 0), radio, color=color, fill=False)
-    ax.add_artist(circle)
-    ax.set_aspect('equal')
-    st.pyplot(fig)
 
 # Triángulo
 elif figura == "Triángulo":
@@ -36,10 +30,11 @@ elif figura == "Triángulo":
     area = 0.5 * base * altura
 # calculo del perimetro
     perimetro = lado_a + lado_b + lado_c
-#resultados
+# resultados
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
+#I
 
 # Rectángulo
 elif figura == "Rectángulo":
@@ -49,7 +44,7 @@ elif figura == "Rectángulo":
     area = base * altura
 # calculo del perimetro
     perimetro = 2 * (base + altura)
-# calculos
+# resultados
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
@@ -65,5 +60,7 @@ elif figura == "Cuadrado":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
+# Imagen de las figuras
+
 
 
