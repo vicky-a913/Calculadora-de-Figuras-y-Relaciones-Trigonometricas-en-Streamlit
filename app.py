@@ -22,13 +22,14 @@ st.write(f"El área del círculo con radio {radio} es:{area:2f}")
 figura = st.selectbox("Selecciona una figura geométrica",["Triángulo"])
 
 # Widget para ingresar el area
-area = st.success("Seleccionar el area", 0.0, 10.0, 5.0)
+area = st.slider("Seleccionar el area", 0.0, 10.0, 5.0)
 
-    base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
-    altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
-    lado_a = st.slider("Lado a", 0.0, 20.0, 5.0)
-    lado_b = st.slider("Lado b", 0.0, 20.0, 5.0)
-    lado_c = st.slider("Lado c", 0.0, 20.0, 5.0)
+if figura == "Triangulo"
+    base = st.slider("Selecciona la base", 0.0, 10.0, 5.0)
+    altura = st.slider("Selecciona la altura", 0.0, 10.0, 5.0)
+    lado_a = st.slider("Lado a", 0.0, 10.0, 5.0)
+    lado_b = st.slider("Lado b", 0.0, 10.0, 5.0)
+    lado_c = st.slider("Lado c", 0.0, 10.0, 5.0)
     area = 0.5 * base * altura
     perimetro = lado_a + lado_b + lado_c
     st.metric("Área", f"{area:.2f}")
